@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+    <script src="jq.js"></script>
+    <style>
+        .header {
+         color: blue;
+         font-size:x-large;
+        }
+     section{
+        margin: 4px auto;
+        width: 90%;
+        height: auto;
+        background: rgb(252, 213, 141);
+        padding: 10px 30px;
+     }
+     button{
+        height: 30px;
+        width: auto;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background: #fba2a2;
+        border: 1px solid black;
+        margin: 3px 5px;
+        color: red;
+     }
+     li{
+        list-style: none;
+     }
+     .evee h2{
+        cursor: pointer;
+     }
+     strong{
+        color: rgb(106, 121, 252);
+        font-size: 28px;
+     }
+     .code{
+        height: 100px;
+        width: 90%;
+        background: #878585e1;
+        color: aliceblue;
+        margin:10px auto;
+        border-radius: 10px;
+        padding: 10px 20px;
+     }
+     .plist-cls{
+        background: red;
+        color: #878585e1;
+     }
+     .cls1{
+        background: #f88585;
+     }
+    </style>
+</head>
+<body>
+    <section>
+        <div id="start">Start</div>
+        <p class="code">
+            $(document).ready(function() {
+                <br>
+                $("#start").html("This paragraph is added after document fully load");
+               
+              });
+             
+        </p>
+    </section>
+   <section>
+    <h2>Selectors</h2>
+    <br><h3>Syntax: <strong>$("selector").method("content");  </strong></h3>
+    <ul>
+        <li><b>$("#demo")</b>  this is for select ID </li>
+        <li><b>$(".class")</b>  this is for select Class of any element</li>
+        <li><b>$("p")</b>  this is for select p element </li>
+        <li><b>$("div>p")</b>  this is for select any element with direct child of div is p </li>
+        <li><b>$("div p")</b>  all p elements that are descendants of a div element</li>
+        <li><b>$("div:eq(0)")</b>  this is for this select any element of 0 index</li>
+        <li> <b>$("div.menu")</b>   all div elements with class="menu"</li>
+         <li><b>$("p:first")</b>    the first p element</li>   
+         <li><b>$("h1, p")</b>  all h1 and all p elements</li>   
+         <li><b>$("*")</b>   all elements of the DOM</li>   
+    </ul>
+    <img src="" alt="">
+   </section>
+   
+   <section>
+    
+    <p id="p2">
+    <b>This is a <i>paragraph</i>.</b>
+      </p><br><br>
+    <button onclick="red()">.show()</button>
+    <button onclick="red0()">.hide()</button>
+    <button onclick="red1()">.html()</button>
+    <button onclick="red2()">.text()</button>    
+    <button onclick="adc()">.prepend()</button>
+    <button onclick="adc1()">.append()</button>
+    <button onclick="adc2()">.before()</button>
+    <button onclick="adc3()">.after()</button>
+    
+   </section>
+   <section>
+    <input type="text" id="name" value="Your Name">
+     <button onclick="alert($('#name').val());">.val()</button>
+   </section>
+    <section id="cls">
+        <p>
+            <ul id="plist-class">
+            <li><strong>Adding removing classes</strong></li>
+            <li> <b>.addClass(); </b> Add new class to selected element</li>
+            <li> <b>.removeClass();</b> Remove any class from selected element</li>
+            <li> <b>.toggleClass();</b> toggle class between adding and removing a class </li>
+            </ul>
+            <button onclick="$('#cls').addClass('cls1');">.addClass()</button>
+            <button onclick="$('#cls').removeClass('cls1');">.removeClass()</button>
+            <button onclick="$('#cls').toggleClass('cls1');">.toggleClass()</button>
+        </p>
+    </section>
+    <section id="csss">
+        <p>
+            <ul id="plist-css">
+                <li><strong>CSS Properties</strong></li>
+                <li> <b>.css("background-color", "blue");</b> To set css property to selected element</li>
+                <li> <b>.css({"color": "red", "font-size": "200%"});</b> To set multiple css properties to any element</li>
+            </ul>
+            <input type="text" name="" id="bgclr" placeholder="Enter background-color here">
+            <button onclick="bgc()">Change</button>
+            <p class="code">
+                function bgc(){ <br>
+                    var bgv =$('#bgclr').val(); <br>
+                     $('#csss').css("backgroundColor",bgv); <br>
+                }
+            </p>
+        </p>
+    </section>
+     <section>
+        <p>
+            <ul id="plist-dime">
+                <li><strong>Dimentions</strong></li>
+                <li><b>$("div").width(100); </b> to set width </li>
+                <li> <b>$("div").height(100);</b> to set height</li>
+                <li><b>$("div").innerWidth(); </b>  width + padding</li>
+                <li><b>$("div").innerHeight(); </b> height + padding</li>
+                <li><b>$("div").outerWidth(); </b> width + padding + border</li>
+                <li><b>$("div").outerHeight(); </b> height + padding + border</li>
+                
+            </ul>
+        </p>
+    </section>
+    <section>
+        <p>
+            <ul id="plist-dom">
+                <li><strong>DOM Traversing</strong></li>
+                <li><b>$("p").parent(); </b> only for one element</li>
+                <li><b>$("p").parents(); </b> for all ancestors</li>
+                <li><b>$("p").children(); </b> all direct children</li>
+                <li><b>$("p").siblings(); </b> all sibling elements</li>
+                <li><b>$("p").next()/nextAll(); </b> next/ all next siblibg elements</li>
+                <li><b>$("p").prev()/prevAll(); </b> previous / all previous sibling elements</li>
+                <li><b>$("p").eq(); </b> elements with a specific index number of the selected elements</li>
+                
+            </ul>
+        </p>
+    </section>
+    <section>
+        <p>
+            <ul id="plist-Relements">
+                <li><strong>Remove Elements</strong></li>
+                <li>$("p").eq(1).remove(); // to remove any element by its index number</li>
+                <li>$("div").empty(); // for remove all child elements</li>
+            </ul>
+        </p>
+    </section>
+    <section>
+        <div class="event-wrapper">
+            <div class="eve1">
+                <div class="evee">
+                    <h2>Click Me</h2>
+                </div>
+                <div class="evee">
+                    <h2>Double Click</h2>
+                </div>
+                <div class="evee">
+                    <h2>MouseEnter</h2>
+                </div>
+                <div class="evee">
+                    <h2>MouseLeave</h2>
+                </div>
+                <div class="evee">
+                    <h2>Mouse Over</h2>
+                </div>
+                <div class="evee">
+                    <h2>Key Down</h2>
+                    <input type="text" name="" id="kd">
+                    <p></p>
+                </div>
+                <div class="evee">
+                    
+                    <h2>Key Up</h2>
+                    <input type="text" name="" id="ku">
+                    <p></p>
+                </div>
+                <div class="evee">
+                    <h2>Focus</h2>
+                    <input type="text" name="" id="foc">
+                    <p></p>
+                </div>
+                <div class="evee">
+                    <h2>Blur</h2>
+                    <input type="text" name="" id="bl">
+                    <p></p>
+                </div>
+                <div class="evee">
+                    <h2>Submit</h2>
+                    <form>
+                        <input type="text" name="" id="">
+                    <input type="submit" name="" value="submit" id="sub">
+                    </form>
+                    
+                </div>
+                <div class="evee">
+                    <h2>Change</h2>
+                    <input type="text" name="" id="chn">
+                    <p></p>
+                </div>
+            </div>
+            <div class="eve2">
+                <div class="eve21">
+                    <h1>Ready event is uccered</h1>
+                    <img src="img/bg2.avif" height="500px" width="100%">
+                </div>
+                <div class="eve22">
+                    <h1>Resize</h1>
+                    <img src="img/pak5.avif" height="500px" width="100%">
+                </div>
+                <div class="eve23">
+                    <h1>On Scroll</h1>
+                    <img src="img/bg1.avif" height="500px" width="100%">
+                </div>
+            </div>
+           
+        </div>
+        <p>
+            click occurs when an element is clicked. <br>
+dblclick :: occurs when an element is double-clicked. <br>
+mouseenter:: occurs when the mouse pointer is over (enters) the selected element. <br>
+mouseleave:: occurs when the mouse pointer leaves the selected element. <br>
+mouseover ::occurs when the mouse pointer is over the selected element. 
+<br><br>Keyboard Events:
+<br>keydown:: occurs when a keyboard key is pressed down.
+<br>keyup:: occurs when a keyboard key is released.
+<br><br>Form Events:
+<br>
+<br>submit:: occurs when a form is submitted.
+<br>change ::occurs when the value of an element has been changed.
+<br>focus:: occurs when an element gets focus.
+<br>blur:: occurs when an element loses focus.
+
+<br><br>Document Events:
+
+<br>ready:: occurs when the DOM has been loaded.
+<br>resize:: occurs when the browser window changes size.
+<br>scroll:: occurs when the user scrolls in the specified element.
+            <ul id="plist-Events">
+                <li><strong>Handling Events</strong></li>
+                <li>$("#demo").click(func());</li>
+                <li>$( "p" ).on( "click", function());</li>
+                <li>$("div").off("click");// to remove event from any element</li>
+            </ul>
+        </p>
+    </section>
+    <section>
+        <p class="ebo">
+            Every event handling function can receive an event object, which contains properties and methods related to the event:
+pageX, pageY the mouse position (X & Y coordinates) at the time the event occurred, relative to the top left of the page.
+type the type of the event (e.g. "click").
+which the button or key that was pressed.
+data any data that was passed in when the event was bound.
+target the DOM element that initiated the event.
+preventDefault() prevent the default action of the event (e.g., following a link).
+stopPropagation() Stop the event from bubbling up to other elements. <p>
+ 
+            <ul id="plist-event-object">
+                <li><strong>The Event Object</strong></li>
+                <li>$( "a" ).click(function(event) {
+  alert(event.pageX);
+  event.preventDefault();
+});</li>
+                <li>$("div").trigger("click"); // automaticaly click, trigger any eventy automatic </li>
+                
+            </ul>
+        
+    </section>
+    <section>
+        <h1>My To-Do List</h1>
+<input type="text" id="inp" placeholder="New item" />
+<button id="add">Add</button>
+<ol id="mylist"></ol>
+    </section>
+    <section><button onclick="$('#efb').fadeIn(1000);">FadeIn</button>
+            <button onclick="$('#efb').fadeOut(1000);">FadeOut</button>
+            <button onclick="$('#efb').fadeToggle(1000);">FadeToggle</button>
+            <button onclick="$('#efb').slideUp(1000);">Slide Up</button>
+            <button onclick="$('#efb').slideDown(1000);">Slide Down</button>
+            <button onclick="$('#efb').slideToggle(1000);">Slide Toggle</button>
+            <button onclick="$('#efb').hide(1000)">Hide</button>
+            <button onclick="$('#efb').show(1000)">Show</button>
+            <button onclick="$('#efb').toggle(1000)">toggle</button>
+        <p id="efb"> Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+             Quis obcaecati quam provident natus, reiciendis sit quasi <br>
+              possimus modi. Ipsum debitis assumenda nostrum repellendus 
+            <br> dolorem quas minus id magni officia eligendi?</p>
+            
+            <ul id="plist-animat">
+                <li><strong>Effects</strong></li>
+                <li>$("div").toggle(1000); // used to toggle between hiding and showing elements.1000 millisecond as the speed argument to the toggle() method</li>
+                <li> <B>callback</B> which is a function to be executed after the animation completes.</li>
+                <li>$("div").fadeToggle(1000);</li>
+                <li>$("div").fadeTo(1500, 0.7);</li>
+                <li>$("div").fadeIn(1500);</li>
+                <li>$("div").fadeOut(1500);</li>
+                <li>$("div").sideUp(1500);</li>
+                <li>$("div").sideDown(1500);</li>
+                <li>$("div").sideToggle(1500);</li>
+            </ul>
+       
+    </section>
+    <section>
+        <p> ::- if you write multiple animate() calls one after another, jQuery creates an "internal" queue for these method calls. Then it runs the animate calls one-by-one.
+
+            <ul id="plist-">
+                <li><strong>Animation</strong></li>
+                <li>$("div").animate({width: '250px'}, 1000);</li>
+                <li>$("div").animate({
+  width: '250px',
+  height: '250px'
+}, 1000);// To stop an animation before it is finished, jQuery provides the stop() method.</li>
+                <li>$("div").animate({
+  width: '+=250px',
+  height: '+=250px'
+}, 1000); // It is also possible to define relative values (the value is then relative to the element's current value). This is done by putting += or -= in front of the value:</li>
+                <li></li>
+            </ul>
+        </p>
+    </section>
+    <section>
+        <p>
+            <ul id="plist-">
+                <li><strong></strong></li>
+                <li>$("button").click(function(){
+                    $("#w3s").attr("href", function(i, origValue){
+                      return origValue + "/jquery/";
+                    });
+                  }); </li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </p>
+    </section>
+    <section>
+        <p>
+            <ul id="plist-">
+                <li><strong></strong></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </p>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,100 @@
+
+.coro9-slider{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    flex-direction: row;
+    z-index: 1;
+    gap: 5px;
+}
+.slide{
+    height: 450px;
+    width: 24%;
+    position: absolute;
+}
+.slide img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+.b{
+    left: 25%;
+    overflow: hidden;
+    z-index: 5;
+    transition:all 0.6s;
+}
+.c{
+    left: 50%;
+    transition:all 0.6s;
+    z-index: 5;
+}
+.d{
+    left: 75%;
+    transition:all 0.6s;
+    z-index: 5;
+}
+.a{
+    z-index: -4;
+    left:25%;
+}
+.e{
+    left: 75%;
+    z-index: -4;
+}
+.nav-dots{
+     height: 50px;
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items:center;
+      gap: 30px;
+}
+.nav-dots div {
+     height: 10px;
+     width: 10px;
+     border-radius: 25px;
+     background: #010001;
+     font-size: 40px;  
+}
+.nav-dots .active{
+    font-size: 50px;
+    box-shadow: 0px 0px 5px rgb(20, 14, 14),0 0 10px rgba(0, 221, 255, 0.651),0 0 20px rgb(60, 255, 0);
+    background: #fbfbfb;
+}
+.coro9-btn{
+    width:100%;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin: 0 5px;
+}
+.coro9-btn button{
+    background: transparent;
+    font-size: 30px;
+    border: none;
+    
+   
+}
+.coro9-btn i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 30px;
+    color: #000;
+    border-radius: 25px;
+}
+
+.coro9-btn button i:hover{
+        color: rgb(255, 255, 255);
+       background: #00000056;
+       filter: drop-shadow(4px 2px 20px red);
+}
+
